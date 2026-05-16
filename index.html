@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeQuest - Apprends à coder</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #0f172a;
+      color: white;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎓 CodeQuest</h1>
+<p>Apprends à coder et gagne de l’XP</p>
+
+<div class="box">
+  <h2>Niveau 1</h2>
+  <p>Faire un print() en Python</p>
+
+  <button onclick="valider()">Valider exercice (+100 XP)</button>
+</div>
+
+<h2>XP : <span id="xp">0</span> / 1000</h2>
+
+<div class="box">
+  <h3>🛒 Boutique XP</h3>
+  <button onclick="acheter()">Débloquer thème noir 🔓 (500 XP)</button>
+</div>
+
+<script>
+let xp = 0;
+
+function valider() {
+  xp += 100;
+  document.getElementById("xp").innerText = xp;
+  alert("Bravo ! +100 XP");
+}
+
+function acheter() {
+  if (xp >= 500) {
+    xp -= 500;
+    document.getElementById("xp").innerText = xp;
+    alert("Thème débloqué !");
+    document.body.style.background = "black";
+  } else {
+    alert("Pas assez d'XP !");
+  }
+}
+</script>
+
+</body>
+</html>
